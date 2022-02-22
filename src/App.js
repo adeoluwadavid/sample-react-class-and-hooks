@@ -1,6 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
+import UseState from './UseState';
+import UseEffect from './UseEffect';
+import UseEffectCleanUp from './UseEffectCleanUp';
+import UseContext from './UseContext';
+import UseRef from './UseRef';
+import UseReducer from './UseReducer';
+import UseMemo from './UseMemo';
+import UseCallback from './UseCallback';
 class App extends Component {
   state = {
     input: { name: '', completed: false },
@@ -37,6 +45,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      <div >
         <h2>Todo List
         </h2>
         <input type="text" onChange={this.handleChange} value={this.state.input.name} />
@@ -46,6 +55,15 @@ class App extends Component {
             onClick={() => this.toggleTodo(e)} className={e.completed === true ? "toggle" : ''}>{e.name}</li>
         })}</ul>
        {this.state.todos.length > 0 && (<div>{completedTodos} task remaining out of {this.state.todos.length}<span>{this.state.todos.length > 1?' tasks':' task'}</span> </div>)} 
+      </div>
+      <UseState />
+      <UseEffect />
+      <UseEffectCleanUp />
+      <UseContext />
+      <UseRef />
+      <UseReducer />
+      <UseCallback />
+      <UseMemo />
       </div>
     )
   }
