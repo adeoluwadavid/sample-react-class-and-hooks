@@ -15,7 +15,7 @@ export default function UseMemo(){
     setCount((c) => c + 1);
   };
   const addTodo = () => {
-    setTodos((t) => [...t, "NewTodo"]);
+    setTodos((t) => [...t, "New Todo"]);
   };
 
     return(
